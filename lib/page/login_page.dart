@@ -27,6 +27,7 @@ class _LoginPageState extends State<LoginPage> {
       uname = dataInputan[0];
       pass = dataInputan[3];
     }
+
     // print(_dataInputan);
     return Scaffold(
       body: ListView(
@@ -191,8 +192,9 @@ class _LoginPageState extends State<LoginPage> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) =>
-                                    HomePage(dataInputan: dataInputan)),
+                              builder: (context) =>
+                                  HomePage(dataInputan: dataInputan),
+                            ),
                           );
                         }
                       },
@@ -242,7 +244,7 @@ class _LoginPageState extends State<LoginPage> {
                 ],
               ),
             ),
-          )
+          ),
         ],
       ),
     );

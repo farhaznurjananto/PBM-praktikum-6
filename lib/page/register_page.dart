@@ -131,6 +131,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   Container(
                     margin: const EdgeInsets.only(top: 8, bottom: 8),
                     child: TextFormField(
+                      keyboardType: TextInputType.number,
                       controller: controller3,
                       decoration: InputDecoration(
                         hintText: 'Mobile Number',
