@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tugas_pbm_pertemuan_6/page/login_page.dart';
+// import 'package:tugas_pbm_pertemuan_6/page/login_page.dart';
 
 List<String> dataInputan = [];
 TextEditingController controller1 = TextEditingController();
@@ -235,14 +235,14 @@ class _RegisterPageState extends State<RegisterPage> {
                           dataInputan.add(controller2.text);
                           dataInputan.add(controller3.text);
                           dataInputan.add(controller4.text);
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => LoginPage(
-                                dataInputan: dataInputan,
-                              ),
-                            ),
-                          );
+                          Navigator.pushNamed(context, '/login',
+                              arguments: dataInputan
+                              // MaterialPageRoute(
+                              //   builder: (context) => LoginPage(
+                              //     dataInputan: dataInputan,
+                              //   ),
+                              // ),
+                              );
                         }
                       },
                       style: ElevatedButton.styleFrom(

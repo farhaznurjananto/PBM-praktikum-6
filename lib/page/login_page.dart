@@ -1,6 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:tugas_pbm_pertemuan_6/page/home_page.dart';
+// import 'package:tugas_pbm_pertemuan_6/page/home_page.dart';
 import 'package:tugas_pbm_pertemuan_6/page/register_page.dart';
 
 // List<String> dataInputan = [];
@@ -8,9 +8,10 @@ import 'package:tugas_pbm_pertemuan_6/page/register_page.dart';
 // TextEditingController controller2 = TextEditingController();
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({super.key, required this.dataInputan});
+  // const LoginPage({super.key, required this.dataInputan});
+  const LoginPage({super.key});
 
-  final List<String?> dataInputan;
+  // final List<String?> dataInputan;
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -20,13 +21,13 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     var loginKey = GlobalKey<FormState>();
-    final dataInputan = widget.dataInputan;
-    String? uname;
-    String? pass;
-    if (dataInputan.isNotEmpty) {
-      uname = dataInputan[0];
-      pass = dataInputan[3];
-    }
+    // final dataInputan = widget.dataInputan;
+    // String? uname;
+    // String? pass;
+    // if (dataInputan.isNotEmpty) {
+    // uname = dataInputan[0];
+    // pass = dataInputan[3];
+    // }
 
     // print(_dataInputan);
     return Scaffold(
@@ -117,8 +118,9 @@ class _LoginPageState extends State<LoginPage> {
                       style: const TextStyle(fontSize: 16),
                       validator: (value) {
                         if (value == null || value.isEmpty) {
-                          return 'Failed!';
-                        } else if (value == uname) {
+                          return 'Fill out this!!';
+                          // } else if (value == uname) {
+                        } else if (value == dataInputan[0]) {
                           return null;
                         } else {
                           return 'Failed!';
@@ -163,8 +165,9 @@ class _LoginPageState extends State<LoginPage> {
                       style: const TextStyle(fontSize: 16),
                       validator: (value) {
                         if (value == null || value.isEmpty) {
-                          return 'Failed!';
-                        } else if (value == pass) {
+                          return 'Fill out this!!';
+                          // } else if (value == pass) {
+                        } else if (value == dataInputan[0]) {
                           return null;
                         } else {
                           return 'Failed!';
@@ -189,13 +192,13 @@ class _LoginPageState extends State<LoginPage> {
                       onPressed: () {
                         if (loginKey.currentState!.validate()) {
                           loginKey.currentState!.save();
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) =>
-                                  HomePage(dataInputan: dataInputan),
-                            ),
-                          );
+                          Navigator.pushNamed(context, '/home',
+                              arguments: dataInputan
+                              // MaterialPageRoute(
+                              //   builder: (context) =>
+                              //       HomePage(dataInputan: dataInputan),
+                              // ),
+                              );
                         }
                       },
                       style: ElevatedButton.styleFrom(
@@ -233,12 +236,12 @@ class _LoginPageState extends State<LoginPage> {
                         color: Colors.black, fontWeight: FontWeight.bold),
                     recognizer: TapGestureRecognizer()
                       ..onTap = () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const RegisterPage(),
-                          ),
-                        );
+                        Navigator.pushNamed(context, '/register'
+
+                            // MaterialPageRoute(
+                            //   builder: (context) => const RegisterPage(),
+                            // ),
+                            );
                       },
                   ),
                 ],

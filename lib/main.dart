@@ -17,10 +17,10 @@ class MyApp extends StatelessWidget {
       routes: {
         "/register": (context) => const RegisterPage(),
         "/login": (context) => const LoginPage(
-              dataInputan: [],
+            // dataInputan: [],
             ),
         "/home": (context) => const HomePage(
-              dataInputan: [],
+            // dataInputan: [],
             ),
       },
       // initialRoute: "/register",

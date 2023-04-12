@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:tugas_pbm_pertemuan_6/page/register_page.dart';
 
 TextEditingController controller1 = TextEditingController();
 TextEditingController controller2 = TextEditingController();
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key, required this.dataInputan});
+  // const HomePage({super.key, required this.dataInputan});
+  const HomePage({super.key});
 
-  final List<String?> dataInputan;
+  // final List<String?> dataInputan;
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -29,12 +31,11 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    var bmiCalculator = GlobalKey<FormState>();
-    final dataInputan = widget.dataInputan;
-    String? uname;
-    if (dataInputan.isNotEmpty) {
-      uname = dataInputan[0];
-    }
+    // final dataInputan = widget.dataInputan;
+    // String? uname;
+    // if (dataInputan.isNotEmpty) {
+    //   uname = dataInputan[0];
+    // }
 
     return Scaffold(
       body: ListView(
@@ -57,7 +58,6 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           Form(
-            key: bmiCalculator,
             child: Padding(
               padding: const EdgeInsets.only(left: 30, right: 30),
               child: Column(
@@ -68,7 +68,8 @@ class _HomePageState extends State<HomePage> {
                     child: Column(
                       children: [
                         Text(
-                          "Welcome, $uname :)",
+                          // "Welcome, $uname :)",
+                          "Welcome, ${dataInputan[0]} :)",
                           style: const TextStyle(
                             fontSize: 30.0,
                             fontWeight: FontWeight.bold,
