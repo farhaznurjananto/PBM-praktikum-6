@@ -117,11 +117,15 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       style: const TextStyle(fontSize: 16),
                       validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Fill out this!!';
-                          // } else if (value == uname) {
-                        } else if (value == dataInputan[0]) {
-                          return null;
+                        if (dataInputan.isNotEmpty) {
+                          if (value == null || value.isEmpty) {
+                            return 'Fill out this!!';
+                            // } else if (value == uname) {
+                          } else if (value == dataInputan[0]) {
+                            return null;
+                          } else {
+                            return 'Failed!';
+                          }
                         } else {
                           return 'Failed!';
                         }
@@ -164,11 +168,15 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       style: const TextStyle(fontSize: 16),
                       validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Fill out this!!';
-                          // } else if (value == pass) {
-                        } else if (value == dataInputan[0]) {
-                          return null;
+                        if (dataInputan.isNotEmpty) {
+                          if (value == null || value.isEmpty) {
+                            return 'Fill out this!!';
+                            // } else if (value == pass) {
+                          } else if (value == dataInputan[0]) {
+                            return null;
+                          } else {
+                            return 'Failed!';
+                          }
                         } else {
                           return 'Failed!';
                         }
